@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+	<title>jQuery Exportable Plugin</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.exportable.js"></script>
+	
+	<script type="text/javascript">
+		
+		function generate_csv_data()
+		{
+			var csv_value = $('.exportable').exportable(
+			{
+				table_header: true,
+				enclosed_by: '"',
+				strip_html: true,
+		  		field_end: ',',
+		  		line_end: '\n'
+			});
+			
+			$("#csv_text").val(csv_value);
+		}
+		
+	</script>
+	
+	<style type="text/css">
+	
+		table { border:1px solid #cccccc; border-collapse:collapse; }
+		table td, table th { border:1px solid #cccccc; text-align:left; padding:6px; }
+		
+	</style>
+	
+</head>
+<body>
+
+	<table id="report_table" class="exportable" summary="Employees, Memeber Numbers, Divisions, Years">
+		<thead>
+			<tr>
+				<th><a href="/emplyoee/view.html">Employee</a></th>
+				<th><a href="/member/view.html">Member Number</a></th>
+				<th>Division</th>
+				<th>Year</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Jane Jones</td>
+				<td>13453948</td>
+				<td>Retail</td>
+				<td>2010</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+			<tr>
+				<td>John Smith</td>
+				<td>13453949</td>
+				<td>Retail</td>
+				<td>2009</td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<form action="generate_csv.php" method ="post">
+		<input type="hidden" name="csv_text" id="csv_text" />
+		<input type="submit" value="Get CSV File" onclick="generate_csv_data()" />
+	</form>
+</body>
+</html>
